@@ -10,7 +10,6 @@ gem 'rack-cors', require: 'rack/cors'
 group :development, :test do
  gem 'rspec-rails'
  gem 'shoulda-matchers'
- gem 'factory_girl_rails'
  gem 'pry'
  gem 'pry-byebug'
 end
