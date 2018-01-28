@@ -20,7 +20,7 @@ RSpec.describe Api::V1::PlantsController, type: :request do
                                                  description: 'The Aloe Vera plant is great')}
       before do
         get '/api/v1/plants'
-        @json_resp = JSON.parse(response.body)['data'].first
+        @json_resp = response_json['data'].first
       end
 
       it 'includes plant attributes' do
