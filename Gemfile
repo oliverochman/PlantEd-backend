@@ -12,6 +12,7 @@ group :development, :test do
  gem 'shoulda-matchers'
  gem 'pry'
  gem 'pry-byebug'
+ gem 'coveralls', require: false
 end
 
 group :development do
