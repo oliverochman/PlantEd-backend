@@ -10,7 +10,7 @@ RSpec.describe Api::V1::PlantsController, type: :request do
     it 'should return a collection of plants' do
       get '/api/v1/plants'
       expect(response.status).to eq 200
-      expect(response_json.count).to eq 3
+      expect(response_json['data'].count).to eq 3
     end
   end
 end
