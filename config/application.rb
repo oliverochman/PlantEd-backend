@@ -21,5 +21,13 @@ module PlantedBackend
         resource '*', headers: :any, methods: [:get, :post, :put, :delete]
       end
     end
+    config.generators do |generate|
+      generate.helper false
+      generate.assets false
+      generate.view_specs false
+      generate.helper_specs false
+      generate.routing_specs false
+      generate.controller_specs false
+    end
   end
 end
