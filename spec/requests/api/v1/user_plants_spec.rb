@@ -21,4 +21,13 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
       expect(response.status).to eq 400
     end
   end
+
+  describe 'User plant collection' do
+
+    it 'can add many plants in the collection' do
+      post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: plant_1.id }
+      post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: plant_2.id }
+      expect(user.user_plants.count).to eq 2
+    end
+  end
 end
