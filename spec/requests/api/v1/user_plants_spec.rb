@@ -10,9 +10,15 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
     expect(user.user_plants.first.plant.name).to eq 'Snake plant'
   end
 
-  it 'has a valid plant id' do
-    post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: nil }
-    expect(response.status).to eq 400
-  end
+  context 'Validations' do
+    it 'has a valid plant id' do
+      post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: nil }
+      expect(response.status).to eq 400
+    end
 
+    it 'has a valid user id' do
+      post "/api/v1/users/#{user.id}/user_plants", params: { user_id: nil }
+      expect(response.status).to eq 400
+    end
+  end
 end
