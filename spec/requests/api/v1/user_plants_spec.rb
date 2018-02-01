@@ -43,11 +43,10 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
 
       it 'returns a user collection of plants' do
         get "/api/v1/users/#{user.id}/user_plants", headers: headers
-        #expect(response_json['plant-id'].count).to eq 3
-        binding.pry
-        expected_response = eval(file_fixture('user_plants.txt').read)
         expect(response.status).to eq 200
+        expected_response = eval(file_fixture('user_plants.txt').read)
         expect(response_json).to eq expected_response.as_json
+        expect(response_json['plant-id'].count).to eq 1
       end
     end
   end
