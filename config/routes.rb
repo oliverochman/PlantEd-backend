@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
   namespace :api do
-    namespace :v1 do
-      resources :plants, only: [:index], constraints: { format: 'json' }
+    namespace :v1, default: { format: 'json' } do
+      resources :plants, only: [:index]
+      mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks]
+      resources :users, only: [:show] do
+        resources :user_plants, only: [:create]
+      end
     end
   end
 end
