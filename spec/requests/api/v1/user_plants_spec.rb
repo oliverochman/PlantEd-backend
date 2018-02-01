@@ -23,8 +23,7 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
     end
   end
 
-  describe 'User plant collection' do
-
+  context 'User plant collection' do
     it 'can add many plants in the collection' do
       post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: plant_1.id }
       post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: plant_2.id }

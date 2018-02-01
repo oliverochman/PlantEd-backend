@@ -54,7 +54,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe 'Relation' do
+  describe 'Relations' do
     it { is_expected.to have_many :user_plants }
     it { is_expected.to have_many :plants }
   end

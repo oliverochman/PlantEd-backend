@@ -12,7 +12,7 @@ RSpec.describe Plant, type: :model do
     it { is_expected.to validate_presence_of :description }
   end
 
-  describe 'Relation' do
+  describe 'Relations' do
     it { is_expected.to have_many :user_plants }
     it { is_expected.to have_many :users }
   end
