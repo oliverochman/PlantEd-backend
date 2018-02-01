@@ -5,9 +5,14 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
   let!(:plant_1) { FactoryBot.create(:plant, name: 'Snake plant') }
   let!(:plant_2) { FactoryBot.create(:plant, name: 'Aloe Vera') }
 
-  it 'POST' do
+  it 'creates a user plant list' do
     post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: plant_1.id }
-    expect(user.user_plants.first.name).to eq 'Snake plant'
+    expect(user.user_plants.first.plant.name).to eq 'Snake plant'
+  end
+
+  it 'has a valid plant id' do
+    post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: nil }
+    expect(response.status).to eq 400
   end
 
 end
