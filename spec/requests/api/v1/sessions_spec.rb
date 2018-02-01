@@ -12,9 +12,9 @@ RSpec.describe 'Sessions', type: :request do
 
       expected_response = {
           'data' => {
-              'id' => user.id, 'uid' => user.email, 'email' => user.email,
-              'provider' => 'email', 'name' => nil, 'nickname' => nil,
-              'image' => nil
+              'id' => user.id, 'email' => user.email,
+              'provider' => 'email', 'uid' => user.email, 'name' => nil,
+              'nickname' => nil, 'image' => nil, 'type' => 'user'
           }
       }
 
