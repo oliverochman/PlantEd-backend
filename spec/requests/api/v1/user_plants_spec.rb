@@ -7,6 +7,7 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
 
   it 'creates a user plant list' do
     post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: plant_1.id }
+    expect(response.status).to eq 200
     expect(user.user_plants.first.plant.name).to eq 'Snake plant'
   end
 
