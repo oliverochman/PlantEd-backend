@@ -9,4 +9,9 @@ class Api::V1::UserPlantsController < ApplicationController
              status: 400
     end
   end
+
+  def index
+    binding.pry
+    userplants = UserPlant.all
+  end
 end

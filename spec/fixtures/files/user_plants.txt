@@ -1,0 +1,6 @@
+{"data"=>
+     [{"id"=> 1,
+       "type"=> "user_plants",
+       "attributes"=> {
+            "user_id"=> 1,
+            "plant_id"=> 1}}]}
