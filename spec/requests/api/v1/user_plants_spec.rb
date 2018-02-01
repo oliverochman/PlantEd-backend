@@ -7,7 +7,7 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
 
   it 'POST' do
     post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: plant_1.id }
-    expect(user.plants.first.name).to eq 'Snake plant'
+    expect(user.user_plants.first.name).to eq 'Snake plant'
   end
 
 end
