@@ -36,8 +36,10 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
   describe '#index' do
     describe 'GET /api/v1/users/#{user.id}/user_plants' do
       let!(:user) { FactoryBot.create(:user, id: 1) }
-      let!(:plant) { FactoryBot.create(:plant, id: 1) }
-      let!(:myplant) { FactoryBot.create(:user_plant, user_id: 1, plant_id: 1) }
+      let!(:plant_1) { FactoryBot.create(:plant, id: 1) }
+      let!(:plant_2) { FactoryBot.create(:plant, id: 2) }
+      let!(:myplant_1) { FactoryBot.create(:user_plant, user_id: 1, plant_id: 1) }
+      let!(:myplant_2) { FactoryBot.create(:user_plant, user_id: 1, plant_id: 2) }
       let(:credentials) { user.create_new_auth_token }
       let(:headers) { { HTTP_ACCEPT: 'application/json' }.merge!(credentials) }
 
@@ -45,6 +47,7 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
         get "/api/v1/users/#{user.id}/user_plants", headers: headers
         expect(response.status).to eq 200
         expected_response = eval(file_fixture('user_plants.txt').read)
+        expect(response_json['data'].count).to eq 2
         expect(response_json).to eq expected_response.as_json
       end
     end
