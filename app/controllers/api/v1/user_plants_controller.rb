@@ -6,7 +6,7 @@ class Api::V1::UserPlantsController < ApplicationController
     if @myplants.save
       render json: { message: "Your plant has been added" }
     else
-      render json: { error: myplants.errors.full_messages },
+      render json: { error: @myplants.errors.full_messages },
              status: 400
     end
   end
