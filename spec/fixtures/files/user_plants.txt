@@ -1,4 +1,6 @@
 {"data"=>
      [{"id"=> "#{UserPlant.last.id}",
-        "user_id"=> 1,
-        "plant_id"=> 1}]}
+         "type"=>"user-plants",
+         "attributes"=>{
+            "user-id"=> 1,
+            "plant-id"=> 1}}]}
