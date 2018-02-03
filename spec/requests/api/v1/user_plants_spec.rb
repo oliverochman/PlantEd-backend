@@ -35,7 +35,6 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
       headers: headers
       post "/api/v1/users/#{user.id}/user_plants", params: { plant_id: plant_2.id },
       headers: headers
-      binding.pry
       expect(user.user_plants.count).to eq 2
     end
   end
