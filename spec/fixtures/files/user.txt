@@ -1,0 +1,11 @@
+{"data"=>
+    {"id"=>"#{User.first.id}",
+     "type"=>"users",
+     "attributes"=>
+           {"email"=>"user@random.com"},
+       "relationships"=>
+           {"plants"=>
+               {"data"=>
+                   [{"id"=>user.plants.first.id,
+                   "name"=>"#{user.plants.first.name}",
+                   "description"=>"#{user.plants.first.description}"}]}}}}
