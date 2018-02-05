@@ -36,6 +36,12 @@ user = User.create(
     password_confirmation: 'whatever'
 )
 
+user2 = User.create(
+    email: 'mariza@hotmail.com',
+    password: 'fuckreact',
+    password_confirmation: 'fuckreact'
+)
+
 plants.each do |plant|
   UserPlant.create(user_id: user.id, plant_id: plant.id)
 end

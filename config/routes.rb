@@ -7,7 +7,7 @@ Rails.application.routes.draw do
                                   controllers: {
                                       sessions: 'api/v1/sessions'
                                   }
-      resources :users, only: [:show] do
+      resources :users, only: [:create, :show] do
         resources :user_plants, only: [:create]
       end
     end
