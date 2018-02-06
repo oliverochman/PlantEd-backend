@@ -4,7 +4,4 @@ class Api::V1::SessionsController < DeviseTokenAuth::SessionsController
     super
   end
 
-  def destroy
-    super
-  end  
 end
