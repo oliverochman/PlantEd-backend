@@ -6,7 +6,7 @@ RSpec.describe UserPlant, type: :model do
     it {is_expected.to have_db_column :user_id }
     it {is_expected.to have_db_column :plant_id }
     it {is_expected.to have_db_column :frequency }
-    it {is_expected.to have_db_column :anchor }
+    it {is_expected.to have_db_column :start_date }
   end
 
   describe 'Relations' do
@@ -17,5 +17,5 @@ RSpec.describe UserPlant, type: :model do
   describe 'Validations' do
    it { is_expected.to validate_presence_of :user_id }
    it { is_expected.to validate_presence_of :plant_id }
- end
+  end
 end

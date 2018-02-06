@@ -27,8 +27,7 @@ ActiveRecord::Schema.define(version: 20180206130646) do
     t.integer  "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "name"
-    t.date     "anchor"
+    t.date     "start_date"
     t.integer  "frequency"
     t.index ["plant_id"], name: "index_user_plants_on_plant_id", using: :btree
     t.index ["user_id"], name: "index_user_plants_on_user_id", using: :btree
