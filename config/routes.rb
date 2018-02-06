@@ -8,7 +8,7 @@ Rails.application.routes.draw do
                                       sessions: 'api/v1/sessions'
                                   }
       resources :users, only: [:create, :show] do
-        resources :user_plants, only: [:create]
+        resources :user_plants, only: [:create, :update]
       end
     end
   end
