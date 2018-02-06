@@ -11,4 +11,14 @@ class Api::V1::UserPlantsController < ApplicationController
              status: 400
     end
   end
+
+  def update
+    plant = UserPlant.find(params[:id])
+    if plant.update_attribute(:frequency, params[:frequency].to_i)
+      render json: { status: 'success'}
+    else
+      render json: { error: plant.errors.full_messages },
+             status: 400
+    end
+  end
 end
