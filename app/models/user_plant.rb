@@ -1,8 +1,6 @@
 class UserPlant < ApplicationRecord
   include IceCube
 
-  #serialize :schedule, IceCube::Schedule
-
   belongs_to :user
   belongs_to :plant
 

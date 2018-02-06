@@ -33,10 +33,28 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
       expect(response.status).to eq 200
     end
 
-    it 'returns succes message' do
+    it 'returns success message' do
       expect(response_json['status']).to eq 'success'
     end
   end
 
-  
+  context 'Unsuccessfull updates' do
+    before do
+      put "/api/v1/users/#{user.id}/user_plants/#{user_plant.id}",
+          headers: headers
+      user_plant.reload
+    end
+
+    it 'does not set the frequency' do
+      expect(user_plant.frequency).to eq nil
+    end
+
+    it 'returns 400' do
+      expect(response.status).to eq 400
+    end
+
+    it 'returns error message' do
+      expect(response_json['error']).to eq 'Please add your plants water needs'
+    end
+  end
 end
