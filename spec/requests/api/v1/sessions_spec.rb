@@ -41,4 +41,24 @@ RSpec.describe 'Sessions', type: :request do
       expect(response.status).to eq 401
     end
   end
+
+  describe 'DELETE /api/v1/auth/sign_out' do
+
+    before do
+      post '/api/v1/auth/sign_in', params: {
+          email: user.email, password: user.password
+      }, headers: headers
+      @headers = {'access-token' => response.headers['access-token'],
+                  uid: response.headers['uid'],
+                  client: response.headers['client'],
+                  HTTP_ACCEPT: 'application/json'}
+
+    end
+
+    it 'logs out a logged in user' do
+      delete '/api/v1/auth/sign_out', headers: @headers
+      expect(response_json['success']).to eq true
+    end
+
+  end
 end
