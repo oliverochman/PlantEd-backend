@@ -21,14 +21,6 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
       expect(user_plant.frequency).to eq 5
     end
 
-    it 'creates a IceCube schedule' do
-      expect(user_plant.schedule).to be_a IceCube::Schedule
-    end
-
-    it 'run every 5 days for 30 days' do
-      expect(user_plant.schedule.rrules).to eq [IceCube::Rule.daily(5).until(Date.today + 30)]
-    end
-
     it 'returns 200' do
       expect(response.status).to eq 200
     end

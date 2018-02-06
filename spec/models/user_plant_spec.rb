@@ -18,4 +18,20 @@ RSpec.describe UserPlant, type: :model do
    it { is_expected.to validate_presence_of :user_id }
    it { is_expected.to validate_presence_of :plant_id }
   end
+
+  describe 'instance methods' do
+    it {is_expected.to respond_to :schedule }
+
+    let!(:user) {FactoryBot.create(:user)}
+    let!(:plant_1) { FactoryBot.create(:plant, name: 'Snake plant') }
+    subject {FactoryBot.create(:user_plant, user: user, plant: plant_1, frequency: 5)}
+
+    it 'creates a IceCube schedule' do
+      expect(subject.schedule).to be_a IceCube::Schedule
+    end
+
+    it 'run every 5 days for 30 days' do
+      expect(subject.schedule.rrules).to eq [IceCube::Rule.daily(5).until(Date.today + 30)]
+    end
+  end
 end
