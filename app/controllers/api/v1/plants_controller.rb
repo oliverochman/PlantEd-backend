@@ -6,7 +6,6 @@ class Api::V1::PlantsController < ApplicationController
   end
 
   def authenticate_api_v1_user!
-    binding.pry
     super
   end
 end
