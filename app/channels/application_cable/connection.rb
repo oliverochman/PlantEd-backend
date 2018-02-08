@@ -1,10 +1,10 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    identified_by :current_api_v1_user
-
-    def connect
-      self.current_api_v1_user #= find_verfied_user
-    end
+    #identified_by :current_api_v1_user
+    #
+    # def connect
+    #   self.current_api_v1_user #= find_verfied_user
+    # end
 
     # protected
     #

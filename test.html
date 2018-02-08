@@ -12,7 +12,7 @@
 
     }).call(this);
 
-    App.room = App.cable.subscriptions.create({channel:'NotificationsChannel', room: '2'}, {
+    App.room = App.cable.subscriptions.create({channel: 'NotificationChannel', user_id: '2'}, {
         connected: function (data) {
             // Called when the subscription is ready for use on the server
             console.log('connected')
@@ -31,7 +31,7 @@
 
         appendMessage: function (data) {
             var parent = document.getElementById('output');
-            var newChild = data.message;
+            var newChild = data.notification;
             parent.insertAdjacentHTML('beforeend', newChild);
             this.notifyMe(strip(data.message).split(':')[1].trim());
         },
@@ -94,7 +94,7 @@
 
     }, false);
 
-    function strip(str){
+    function strip(str) {
         // Remove some tags
         str = str.replace(/<[^>]+>/gim, '');
 
