@@ -1,6 +1,5 @@
 class NotificationChannel < ApplicationCable::Channel
   def subscribed
-    binding.pry
     if self.params[:user_id].nil?
       code = self.connection.connection_identifier
     else
