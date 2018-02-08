@@ -12,10 +12,10 @@
 
     }).call(this);
 
-    App.room = App.cable.subscriptions.create({channel:'NotificationsChannel'}, {
+    App.room = App.cable.subscriptions.create({channel:'NotificationsChannel', room: '2'}, {
         connected: function (data) {
             // Called when the subscription is ready for use on the server
-            console.log(connected)
+            console.log('connected')
         },
 
         disconnected: function () {
@@ -25,6 +25,7 @@
 
         received: function (data) {
             // Called when there's incoming data on the websocket for this channel
+            console.log('received message')
             return this.appendMessage(data);
         },
 
