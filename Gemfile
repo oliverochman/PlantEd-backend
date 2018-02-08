@@ -10,6 +10,7 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth'
 gem 'ice_cube'
 gem 'redis', '~> 3.0'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'rspec-rails'
