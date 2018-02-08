@@ -9,6 +9,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth'
 gem 'ice_cube'
+gem 'redis', '~> 3.0'
 
 group :development, :test do
   gem 'rspec-rails'
