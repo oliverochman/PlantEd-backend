@@ -57,5 +57,6 @@ RSpec.describe User, type: :model do
   describe 'Relations' do
     it { is_expected.to have_many :user_plants }
     it { is_expected.to have_many :plants }
+    it { is_expected.to have_many :notifications }
   end
 end

@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   has_many :user_plants
   has_many :plants, through: :user_plants
+  has_many :notifications
 end
