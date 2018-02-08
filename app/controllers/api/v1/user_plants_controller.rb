@@ -26,4 +26,11 @@ class Api::V1::UserPlantsController < ApplicationController
              status: 400
     end
   end
+
+  private
+
+  def set_notification
+    ActionCable.server.broadcast 'current_api_v1_user',
+                                 notification: render_notification(notification)
+  end
 end
