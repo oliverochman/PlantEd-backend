@@ -1,9 +1,10 @@
 Plant.destroy_all
 User.destroy_all
 UserPlant.destroy_all
+binding.pry
 
 plants = Plant.create([
-  {name: 'Aloe Vera', image_file_name: 'aleo_vera.jpg', description: 'The Aloe Vera plant (succulent type) is well known for offering possible health and beauty benefits. This succulent is a tough species that is very easy to care for and rarely presents problems for most growers.'},
+  {name: 'Aloe Vera', file: File.new(Rails.root.join('images','plant_images', 'aleo_vera.jpg')), description: 'The Aloe Vera plant (succulent type) is well known for offering possible health and beauty benefits. This succulent is a tough species that is very easy to care for and rarely presents problems for most growers.'},
   {name: 'Snake plant', image_file_name: 'snake_plant.jpg', description: 'This carefree, tough succulent grows almost anywhere. Snake plant (Sansevieria spp.) tolerates neglect but responds nicely to good care. '},
   {name: 'Peace lily', image_file_name: 'peace_lilly.jpg', description: 'The easy-care peace lily (Spathiphyllum wallisii) tolerates low humidity and low light. Its glossy, lance-shape leaves tip arching stems that surround the central flower spikes.'},
   {name: 'English ivy', image_file_name: 'english_ivy.jpg', description: 'This versatile foliage plant’s dainty demeanor makes it suitable for hanging baskets or pots. It’s among the best houseplants for training on topiary forms or using as a groundcover beneath larger houseplants.'},

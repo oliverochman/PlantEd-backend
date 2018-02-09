@@ -9,8 +9,10 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth'
 gem 'ice_cube'
-gem 'aws-sdk', '< 3.0'
-gem 'paperclip', "~> 5.2.1"
+
+# Attachments
+gem 'paperclip', '~> 5.0.0'
+gem 'aws-sdk', '~> 2.10', '>= 2.10.128'
 
 group :development, :test do
   gem 'rspec-rails'
