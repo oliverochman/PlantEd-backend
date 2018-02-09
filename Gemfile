@@ -9,6 +9,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth'
 gem 'ice_cube'
+gem 'aws-sdk', '< 3.0'
+gem 'paperclip', "~> 5.2.1"
 gem 'redis', '~> 3.0'
 gem 'whenever', require: false
 
@@ -20,6 +22,7 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'factory_bot_rails'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
 end
 
 group :development do

@@ -39,7 +39,7 @@ RSpec.describe UserPlant, type: :model do
       let(:action_cable) {ActionCable.server}
 
       it 'broadcast notification to user\'s channel ' do
-        expect(action_cable).to receive(:broadcast).with('notifications_1', {notification: 'User, Snake plant needs to be watered!', user_id: 1} )
+        expect(action_cable).to receive(:broadcast).with("notifications_#{user.id}", {notification: 'User, Snake plant needs to be watered!', user_id: user.id} )
 
         subject.send_notification
       end
