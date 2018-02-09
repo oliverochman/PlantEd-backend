@@ -5,6 +5,11 @@ RSpec.describe Plant, type: :model do
     it { is_expected.to have_db_column :id }
     it { is_expected.to have_db_column :name }
     it { is_expected.to have_db_column :description }
+    it { is_expected.to have_db_column :image_content_type }
+    it { is_expected.to have_db_column :image_file_name }
+    it { is_expected.to have_db_column :image_file_size }
+    it { is_expected.to have_db_column :image_updated_at }
+    it { is_expected.to have_attached_file :image }
   end
 
   describe 'Validations' do
