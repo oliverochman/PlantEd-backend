@@ -1,6 +1,7 @@
 Plant.destroy_all
 User.destroy_all
 UserPlant.destroy_all
+binding.pry
 
 plants = Plant.create([
   {name: 'Aloe Vera', image: File.new(Rails.root.join('images','plant_images', 'aleo_vera.jpg')), description: 'The Aloe Vera plant (succulent type) is well known for offering possible health and beauty benefits. This succulent is a tough species that is very easy to care for and rarely presents problems for most growers.'},

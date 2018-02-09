@@ -4,18 +4,19 @@ class Plant < ApplicationRecord
   has_many :users, through: :user_plants
 
   has_attached_file :image,
-                    styles: { medium: "300x300>",
-                              thumb: "100x100>" },
-
                     storage: :s3,
                     s3_credentials: {
-                        bucket: ENV['S3_BUCKET'],
-                        access_key_id: ENV['S3_ACCESS_KEY'],
-                        secret_access_key: ENV['S3_SECRET_KEY'],
+                        bucket: ENV['AWS_BUCKET'],
+                        access_key_id: ENV['AWS_ACCESS_KEY'],
+                        secret_access_key: ENV['AWS_SECRET_KEY'],
                         s3_region: ENV['AWS_REGION'],
                         url: :s3_domain_url,
                         s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com"
-                    }
-  validates_attachment_content_type :image,
-                        content_type: %w(image/jpeg, image/jpg)
+                    },
+                    styles: { medium: '300x300>',
+                              thumb: '100x100>' }
+
+  validates_attachment :image,
+                       content_type:
+                           {content_type: %w(image/jpg image/jpeg image/png image/gif)}
 end

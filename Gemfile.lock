@@ -44,13 +44,13 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    aws-sdk (2.10.127)
-      aws-sdk-resources (= 2.10.127)
-    aws-sdk-core (2.10.127)
+    aws-sdk (2.10.128)
+      aws-sdk-resources (= 2.10.128)
+    aws-sdk-core (2.10.128)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.10.127)
-      aws-sdk-core (= 2.10.127)
+    aws-sdk-resources (2.10.128)
+      aws-sdk-core (= 2.10.128)
     aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     builder (3.2.3)
@@ -129,7 +129,7 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    paperclip (5.2.1)
+    paperclip (5.0.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
@@ -238,7 +238,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
-  aws-sdk (< 3.0)
+  aws-sdk (~> 2.10, >= 2.10.128)
   coveralls
   database_cleaner
   devise_token_auth
@@ -247,7 +247,7 @@ DEPENDENCIES
   ice_cube
   jbuilder (~> 2.5)
   listen (~> 3.0.5)
-  paperclip (~> 5.2.1)
+  paperclip (~> 5.0.0)
   pg (~> 0.18)
   pry
   pry-byebug
@@ -263,4 +263,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
