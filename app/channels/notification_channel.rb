@@ -6,7 +6,6 @@ class NotificationChannel < ApplicationCable::Channel
       code = self.params[:user_id]
     end
     stream_from "notifications_#{code}"
-    binding.pry
   end
 
   def unsubscribed

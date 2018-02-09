@@ -11,13 +11,13 @@ class UserPlant < ApplicationRecord
       s.add_recurrence_rule Rule.daily(self.frequency).until(Date.today + 30)
     end
   end
-  
+
   def send_notification
-    if self.frequency && Time.now < self.schedule.next_occurrence
+    if Time.now < self.schedule.next_occurrence
       data = {notification: "#{self.user.email.split('@').first.humanize}, #{self.plant.name} needs to be watered!",
               user_id: self.user.id}
       BroadcastNotificationJob.perform_now(data)
-    end
+    end if self.frequency
   end
 
 end
