@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Action Cable
 
-Things you may want to cover:
+```
+data = {:notification=>"You have to water your plant", :time=>"05:17, 02/08/2018", :user_id=>2}
 
-* Ruby version
+BroadcastNotificationJob.perform_now(data)
+```
 
-* System dependencies
 
-* Configuration
+## Run crone jobs with whenever gem
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ whenever --update-crontab planted
+```
