@@ -1,5 +1,5 @@
 class PlantSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :image
+  attributes :name, :description, :image
 
 
   def image

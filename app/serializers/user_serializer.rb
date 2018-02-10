@@ -3,8 +3,8 @@ class UserSerializer < ActiveModel::Serializer
   has_many :plants
 
   def plants
-    object.plants.map do |plant|
-      PlantSerializer.new(plant).as_json
+    object.user_plants.map do |plant|
+      UserPlantsSerializer.new(plant).as_json
     end
   end
 end
