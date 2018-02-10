@@ -38,4 +38,5 @@ RSpec.describe Api::V1::UserPlantsController, type: :request do
       expect(user.user_plants.count).to eq 2
     end
   end
+
 end

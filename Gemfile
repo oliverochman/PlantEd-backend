@@ -11,6 +11,8 @@ gem 'devise_token_auth'
 gem 'ice_cube'
 gem 'aws-sdk', '< 3.0'
 gem 'paperclip', "~> 5.2.1"
+gem 'redis', '~> 3.0'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'rspec-rails'
@@ -21,6 +23,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'dotenv-rails'
+  gem 'action-cable-testing'
 end
 
 group :development do

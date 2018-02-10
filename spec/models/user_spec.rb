@@ -3,28 +3,33 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   describe 'Database table' do
-    it { is_expected.to have_db_column :id }
-    it { is_expected.to have_db_column :provider }
-    it { is_expected.to have_db_column :uid }
-    it { is_expected.to have_db_column :encrypted_password }
-    it { is_expected.to have_db_column :reset_password_token }
-    it { is_expected.to have_db_column :reset_password_sent_at }
-    it { is_expected.to have_db_column :remember_created_at }
-    it { is_expected.to have_db_column :sign_in_count }
-    it { is_expected.to have_db_column :current_sign_in_at }
-    it { is_expected.to have_db_column :last_sign_in_at }
-    it { is_expected.to have_db_column :current_sign_in_ip }
-    it { is_expected.to have_db_column :last_sign_in_ip }
-    it { is_expected.to have_db_column :confirmation_token }
-    it { is_expected.to have_db_column :confirmed_at }
-    it { is_expected.to have_db_column :confirmation_sent_at }
-    it { is_expected.to have_db_column :unconfirmed_email }
-    it { is_expected.to have_db_column :nickname }
-    it { is_expected.to have_db_column :image }
-    it { is_expected.to have_db_column :email }
-    it { is_expected.to have_db_column :tokens }
-    it { is_expected.to have_db_column :created_at }
-    it { is_expected.to have_db_column :updated_at }
+    it {is_expected.to have_db_column :id}
+    it {is_expected.to have_db_column :provider}
+    it {is_expected.to have_db_column :uid}
+    it {is_expected.to have_db_column :encrypted_password}
+    it {is_expected.to have_db_column :reset_password_token}
+    it {is_expected.to have_db_column :reset_password_sent_at}
+    it {is_expected.to have_db_column :remember_created_at}
+    it {is_expected.to have_db_column :sign_in_count}
+    it {is_expected.to have_db_column :current_sign_in_at}
+    it {is_expected.to have_db_column :last_sign_in_at}
+    it {is_expected.to have_db_column :current_sign_in_ip}
+    it {is_expected.to have_db_column :last_sign_in_ip}
+    it {is_expected.to have_db_column :confirmation_token}
+    it {is_expected.to have_db_column :confirmed_at}
+    it {is_expected.to have_db_column :confirmation_sent_at}
+    it {is_expected.to have_db_column :unconfirmed_email}
+    it {is_expected.to have_db_column :nickname}
+    it {is_expected.to have_db_column :image}
+    it {is_expected.to have_db_column :email}
+    it {is_expected.to have_db_column :tokens}
+    it {is_expected.to have_db_column :created_at}
+    it {is_expected.to have_db_column :updated_at}
+  end
+
+  describe 'Relations' do
+    it {is_expected.to have_many :user_plants}
+    it {is_expected.to have_many :plants}
   end
 
   describe 'Validations' do
@@ -45,8 +50,7 @@ RSpec.describe User, type: :model do
     end
 
     context 'should have a valid email address' do
-      emails = ['asdf@ds.com', 'hello@example.uk', 'test1234@yahoo.si',
-                'asdf@example.eu']
+      emails = %w(asdf@ds.com hello@example.uk test1234@yahoo.si asdf@example.eu)
 
       emails.each do |email|
         it {is_expected.to allow_value(email).for(:email)}
@@ -54,8 +58,5 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe 'Relations' do
-    it { is_expected.to have_many :user_plants }
-    it { is_expected.to have_many :plants }
-  end
+
 end
