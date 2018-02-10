@@ -42,6 +42,10 @@ RSpec.describe Api::V1::UsersController, type: :request do
       it 'should return a collection of plants' do
         expect(@json_resp['relationships']['plants']['data'].count).to eq 4
       end
+
+      it 'should include an image' do
+        expect(@json_resp['relationships']['plants']['data'].first['image']).not_to be nil
+      end
     end
   end
 end
