@@ -1,10 +1,6 @@
 class NotificationChannel < ApplicationCable::Channel
   def subscribed
-    if self.params[:user_id].nil?
-      code = self.connection.connection_identifier
-    else
-      code = self.params[:user_id]
-    end
+    code = self.params[:user_id]
     stream_from "notifications_#{code}"
   end
 
