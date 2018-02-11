@@ -44,7 +44,8 @@ RSpec.describe Api::V1::UsersController, type: :request do
       end
 
       it 'should include an image' do
-        expect(@json_resp['relationships']['plants']['data'].first['image']).not_to be nil
+        expect(@json_resp['relationships']['plants']['data'].first['plant']['image'])
+          .not_to be nil
       end
     end
   end
