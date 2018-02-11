@@ -4,7 +4,7 @@ RSpec.describe Api::V1::UsersController, type: :request do
   describe 'user #show' do
     let!(:user) { FactoryBot.create(:user) }
     let(:credentials) { user.create_new_auth_token }
-    let!(:plant) { FactoryBot.create(:plant) }
+    let!(:plant) { FactoryBot.create(:plant, id: 4) }
 
     context 'validations' do
       it 'returns a valid request' do

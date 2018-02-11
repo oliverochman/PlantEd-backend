@@ -5,7 +5,7 @@
   "relationships"=>
    {"plants"=>
      {"data"=>
-       [{"id"=>1,
+       [{"id"=>4,
          "plant"=>{"name"=>"#{user.plants.first.name}", "description"=>"#{user.plants.first.description}", "image"=>"/images/medium/missing.png"},
          "frequency"=>nil}
         ]}
